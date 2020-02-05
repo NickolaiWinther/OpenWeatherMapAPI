@@ -1,0 +1,76 @@
+﻿<Window x:Class="OpenWeatherMapAPI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpenWeatherMapAPI"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Temperatur" Height="400" Width="400">
+    
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="https://images.unsplash.com/photo-1525490829609-d166ddb58678?ixlib=rb-1.2.1"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="GhostWhite"
+              Opacity=".6">
+            <TextBlock Text="Skriv navnet på en by"
+                       FontSize="20"
+                       VerticalAlignment="Center"
+                       />
+        </Grid>
+        
+        <Grid Grid.RowSpan="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <TextBox x:Name="InputTextBox"
+                         VerticalAlignment="Stretch" 
+                         HorizontalAlignment="Stretch"
+                         FontSize="20"
+                         VerticalContentAlignment="Center"
+                         TextWrapping="Wrap"
+                         BorderThickness="2"
+                         BorderBrush="LightSkyBlue"/>
+
+            </Grid>
+            <Grid Grid.Column="1">
+                <Button x:Name="SearchButton"
+                        Content="Søg" 
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"
+                        FontSize="20"
+                        Background="white"
+                        BorderThickness="2"
+                        BorderBrush="LightSkyBlue" Click="SearchButton_Click"/>
+
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Image x:Name="WeatherImage"
+                   HorizontalAlignment="Center"
+                   Height="200"  
+                   Width="200" />
+
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <TextBlock x:Name="TemperatureTextBlock"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"
+                       FontSize="50"/>
+
+        </Grid>
+    </Grid>
+</Window>
